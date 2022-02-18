@@ -8,6 +8,10 @@ const client = new MongoClient(uri);
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.get("/", (req, res) => {
+  return res.send("Hello World");
+});
+
 app.get("/apy", async (req, res) => {
   try {
     await client.connect();
