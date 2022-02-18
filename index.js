@@ -6,7 +6,7 @@ require("dotenv").config();
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 const app = express();
-// const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.get("/apy", async (req, res) => {
   try {
@@ -31,6 +31,6 @@ app.get("/apy", async (req, res) => {
   //   .catch((err) => res.send(err));
 });
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
